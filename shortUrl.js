@@ -9,7 +9,8 @@ const shortUrlSchema = new mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: shortId.generate
+        default: shortId.generate // provides object item with shortid since no input for the short is provided during POST request
+        // default helps to apply the newly generated shortId to this object as it's value is not defined
     },
     clicks: {
         type: Number,
